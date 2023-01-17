@@ -8,12 +8,18 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "eslint --ext .tsx --ext .ts src/ --fix && npx tsc --project tsconfig.json",
-    "pretty": "prettier --write src/"
+    "prettier": "prettier --write src/"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint && yarn prettier"
+    }
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
     "expo": "~47.0.12",
     "expo-status-bar": "~1.4.2",
+    "husky": "^8.0.3",
     "react": "18.1.0",
     "react-native": "0.70.5",
     "react-native-paper": "^5.1.3",
